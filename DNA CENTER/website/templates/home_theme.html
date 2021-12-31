@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/style.css" rel="stylesheet">
+    <title>Home</title>
+    <style>
+        /* Reset CSS */
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-family: Arial, Helvetica, sans-serif; /*font-fam có tính kế thừa nên bỏ vô thẻ html để đc tất cả các font trong web*/
+        }
+        /* 
+        1. vị trí
+        2. kích thước
+        3. màu sắc
+        4. kiểu dáng
+        */
+        /* #main { chứa cả website
+
+        } */
+
+        #header { /*đầu trang*/
+            height: 61px;
+            width: 100%;
+            background-color: #fff;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            border-bottom: 1px solid rgb(175, 173, 173);
+        }
+
+        #nav { /*thanh điều hướng nằm trong phần header*/
+            display: flex; 
+            align-items: center;
+            height: 60px;
+        }
+
+        #nav li { /*css lên all tp của nav*/
+            position: relative; /*cha của .subnav => xem lại position*/
+            list-style: none;
+        }
+        
+        #nav > li > a { /*css trực tiếp vào a con của li => css lên menu cấp 1, menu cấp 2 (MORE) k bị ảnh hưởng*/
+            color: #333;
+        }
+        
+        #nav li a { /*css lên từng tp của menu nav*/
+            text-decoration: none; /*bỏ gạch chân*/
+            padding: 0 24px; /*tạo khoảng cách giữa các tp*/
+            line-height: 60px;
+        }
+        
+        #nav > li:hover { /*css khi di chuột vào (hover), dấu > chỉ ảnh hưởng tới cấp 1*/
+            color: #000; /*khi di chuột vào chữ thành màu đen */
+            background-color: #ccc; /*background thành màu xám*/
+        }
+
+        #nav .logo {
+            color: #049fd9;
+            font-size: 23px;
+        }
+
+        #logout {
+            padding: 10px;
+        }
+        
+        #logout a {
+            line-height: 43px;
+            text-decoration: none;
+            color: #049fd9;
+        }
+
+        .card-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card-row {
+            display: flex;
+        }
+
+        .card {
+            width: 453px;
+            height: 293px;
+            border: 1px solid rgb(175, 173, 173);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+        }
+
+        .card-img {
+            width: 250px;
+            height: 200px;
+        }
+
+        .card-btn {
+            margin-top: 20px;
+            border:none;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        .card-btn a {
+            text-decoration: none;
+            color: #27afd8;
+        }
+    </style>
+</head>
+<body>
+    <div id="home">
+        <div id="header">
+            <ul id="nav">
+                <li><a class="logo" href="/"><strong>Cisco</strong> DNA Center</a></li>
+                <li><a href="">DESIGN</a></li>
+                <li><a href="">POLICY</a></li>
+                <li><a href="">PROVISION</a></li>
+                <li><a href="">ASSURANCE</a></li>
+            </ul>
+            <div id="logout">
+                <a href="/login">Log Out</a>
+            </div>
+        </div>
+        <div id="content">
+            <div class="card-wrapper">
+                <div class="card-row">
+                    <div class="card">
+                        <img class="card-img" src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.15752-9/260140909_481398206736729_8057316926897608443_n.png?_nc_cat=102&ccb=1-5&_nc_sid=ae9488&_nc_ohc=_yEOjv_RE9kAX_WX46C&tn=WktO9YoDahHPQCtn&_nc_ht=scontent.fsgn2-5.fna&oh=2d1ba8a3d3980907c1a91caf3d80f7ec&oe=61CD32A3" alt="">
+                        <button class="card-btn">
+                            <a href="/health"><strong>Device Health</strong></a>
+                        </button>
+                    </div>
+                    <div class="card">
+                        <img class="card-img" src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.15752-9/263034767_1397667267315382_4155153821283299148_n.png?_nc_cat=104&ccb=1-5&_nc_sid=ae9488&_nc_ohc=014JJaLfo0MAX-sfoE5&_nc_ht=scontent.fsgn2-5.fna&oh=793e79e203938175355fafdbb1896b47&oe=61CB573A" alt="">
+                        <button class="card-btn">
+                            <a href="/device"><strong>Network Devices</strong></a>
+                        </button>
+                    </div>
+                    <div class="card">
+                        <img class="card-img" src="https://scontent.xx.fbcdn.net/v/t1.15752-9/261487786_325068779162388_2750098968474384399_n.png?_nc_cat=111&ccb=1-5&_nc_sid=aee45a&_nc_ohc=SUUcaPLa3n0AX89Bzy5&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=9909372fd583e9a502f18461c95d0f9d&oe=61D20374" alt="">
+                        <button class="card-btn">
+                            <a href="/topology"><strong>Topology</strong></a>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-row">
+                    <div class="card">
+                        <img class="card-img" src="https://scontent.fsgn2-6.fna.fbcdn.net/v/t1.15752-9/263152632_305927444717921_4771229649524726139_n.png?_nc_cat=100&ccb=1-5&_nc_sid=ae9488&_nc_ohc=-G_sjaEIduEAX_C_0X1&tn=WktO9YoDahHPQCtn&_nc_ht=scontent.fsgn2-6.fna&oh=540e1c015c23ca2e94edbd5f731d4062&oe=61CE7FFF" alt="">
+                        <button class="card-btn">
+                            <a href="/vlan"><strong>Vlan</strong></a>
+                        </button>
+                    </div>
+                    <div class="card">
+                        <img class="card-img" src="https://scontent.fsgn2-2.fna.fbcdn.net/v/t1.15752-9/262949042_449201666729082_4275467316580126876_n.png?_nc_cat=103&ccb=1-5&_nc_sid=ae9488&_nc_ohc=5OFAKI_twZgAX9e1MzF&_nc_ht=scontent.fsgn2-2.fna&oh=629775798d102a8bb34df0525537c50f&oe=61CF7F6F" alt="">
+                        <button class="card-btn">
+                            <a href="/site"><strong>Sites</strong></a>
+                        </button>
+                    </div>
+                    <div class="card">
+                        <img class="card-img" src="https://scontent.fsgn2-1.fna.fbcdn.net/v/t1.15752-9/262468501_221064426713077_9121846956063766182_n.png?_nc_cat=111&ccb=1-5&_nc_sid=ae9488&_nc_ohc=Cv9D8z-_CcMAX86YSta&_nc_ht=scontent.fsgn2-1.fna&oh=bee420de96a2333708caed23d6b1e8d7&oe=61CCC3BB" alt="">
+                        <button class="card-btn">
+                            <a href="/swim"><strong>Image</strong></a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
