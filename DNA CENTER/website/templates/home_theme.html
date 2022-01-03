@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/style.css" rel="stylesheet">
+    <title>Home</title>
+    <style>
+        /* Reset CSS */
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-family: Arial, Helvetica, sans-serif; /*font-fam có tính kế thừa nên bỏ vô thẻ html để đc tất cả các font trong web*/
+        }
+        /* 
+        1. vị trí
+        2. kích thước
+        3. màu sắc
+        4. kiểu dáng
+        */
+        /* #main { chứa cả website
+
+        } */
+
+        #header { /*đầu trang*/
+            height: 61px;
+            width: 100%;
+            background-color: #fff;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            border-bottom: 1px solid rgb(175, 173, 173);
+        }
+
+        #nav { /*thanh điều hướng nằm trong phần header*/
+            display: flex; 
+            align-items: center;
+            height: 60px;
+        }
+
+        #nav li { /*css lên all tp của nav*/
+            position: relative; /*cha của .subnav => xem lại position*/
+            list-style: none;
+        }
+        
+        #nav > li > a { /*css trực tiếp vào a con của li*/
+            color: #333;
+        }
+        
+        #nav li a { /*css lên từng tp của menu nav*/
+            text-decoration: none; /*bỏ gạch chân*/
+            padding: 0 24px;
+            line-height: 60px;
+        }
+        
+        #nav > li:hover { /*css khi di chuột vào (hover)*/
+            color: #000; /*khi di chuột vào chữ thành màu đen */
+            background-color: #ccc; /*background thành màu xám*/
+        }
+
+        #nav .logo {
+            color: #049fd9;
+            font-size: 23px;
+        }
+
+        #logout {
+            padding: 10px;
+        }
+        
+        #logout a {
+            line-height: 43px;
+            text-decoration: none;
+            color: #049fd9;
+        }
+
+        .card-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card-row {
+            display: flex;
+        }
+
+        .card {
+            width: 453px;
+            height: 293px;
+            border: 1px solid rgb(175, 173, 173);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+        }
+
+        .card-img {
+            width: 250px;
+            height: 200px;
+        }
+
+        .card-btn {
+            margin-top: 20px;
+            border:none;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        .card-btn a {
+            text-decoration: none;
+            color: #27afd8;
+        }
+    </style>
+</head>
+<body>
+    <div id="home">
+        <div id="header">
+            <ul id="nav">
+                <li><a class="logo" href="/"><strong>Cisco</strong> DNA Center</a></li>
+                <li><a href="">DESIGN</a></li>
+                <li><a href="">POLICY</a></li>
+                <li><a href="">PROVISION</a></li>
+                <li><a href="">ASSURANCE</a></li>
+            </ul>
+            <div id="logout">
+                <a href="/login">Log Out</a>
+            </div>
+        </div>
+        <div id="content">
+            <div class="card-wrapper">
+                <div class="card-row">
+                    <div class="card">
+                        <img class="card-img" src="https://f4-zpcloud.zdn.vn/4894739659692257440/24725be5f71d3d43640c.jpg" alt="">
+                        <button class="card-btn">
+                            <a href="/health"><strong>Device Health</strong></a>
+                        </button>
+                    </div>
+                    <div class="card">
+                        <img class="card-img" src="https://f5-zpcloud.zdn.vn/3440253260424392227/e209ca3664ceae90f7df.jpg" alt="">
+                        <button class="card-btn">
+                            <a href="/device"><strong>Network Devices</strong></a>
+                        </button>
+                    </div>
+                    <div class="card">
+                        <img class="card-img" src="https://scontent.xx.fbcdn.net/v/t1.15752-9/261487786_325068779162388_2750098968474384399_n.png?_nc_cat=111&ccb=1-5&_nc_sid=aee45a&_nc_ohc=SUUcaPLa3n0AX89Bzy5&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=9909372fd583e9a502f18461c95d0f9d&oe=61D20374" alt="">
+                        <button class="card-btn">
+                            <a href="/topology"><strong>Topology</strong></a>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-row">
+                    <div class="card">
+                        <img class="card-img" src="https://f5-zpcloud.zdn.vn/3349465535679478788/2552eaf8af6665383c77.jpg" alt="">
+                        <button class="card-btn">
+                            <a href="/vlan"><strong>Vlan</strong></a>
+                        </button>
+                    </div>
+                    <div class="card">
+                        <img class="card-img" src="https://f4-zpcloud.zdn.vn/1152480898330399810/bec3d091910f5b51021e.jpg" alt="">
+                        <button class="card-btn">
+                            <a href="/site"><strong>Sites</strong></a>
+                        </button>
+                    </div>
+                    <div class="card">
+                        <img class="card-img" src="https://f5-zpcloud.zdn.vn/5023290849633336322/7e25ad95076dcd33947c.jpg" alt="">
+                        <button class="card-btn">
+                            <a href="/swim"><strong>Image</strong></a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
